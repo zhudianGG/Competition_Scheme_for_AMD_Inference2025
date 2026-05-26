@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+*.egg-info/
+
+# Bench artifacts (transient / re-derivable)
+*.tar.gz
+*.tmp
+.ipynb_checkpoints/
+
+# Defunct fork-debug server logs (full set; canonical findings live in results/SUMMARY.md)
+logs/v13_server.log
+logs/v14_server.log
+logs/v15_server.log
+logs/v16_server.log
+logs/v17_server.log
+logs/v18_server.log
+logs/v19_server.log
+logs/v20_server.log
+logs/v21_server.log
+logs/build_infllmv2.log
+logs/build_sparse_kernel.log
+
+# Historical sglang bf16 attempt server logs (fork integration trail)
+results/sala_bf16/
+
+# OS junk
+.DS_Store
+Thumbs.db

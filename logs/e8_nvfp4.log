@@ -1,0 +1,51 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[e8] 10 prompts loaded
+[e8] loading bf16 target for agreement anchor + sensitivity scan
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.22it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.38it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.46it/s]
+[e8] running FourOverSix per-tensor sensitivity scan ...
+[e8] FourOverSix per-tensor selection (bit-budget weighted):
+  OVERALL FP4: 254/256 = 99.2%
+      down: FP4  32 / FP6   0  (100.0% FP4)
+      gate: FP4  40 / FP6   0  (100.0% FP4)
+    o_proj: FP4  32 / FP6   0  (100.0% FP4)
+     other: FP4  24 / FP6   0  (100.0% FP4)
+       qkv: FP4  94 / FP6   2  ( 97.9% FP4)
+        up: FP4  32 / FP6   0  (100.0% FP4)
+[e8]   scan done in 255.2s (256 linears)
+[e8]   wrote per-tensor picks to /sgl-workspace/soar_2026_w8_bench/results/e8_picks.json
+[e8] bf16 rollouts captured
+[e8] loading target for quantization
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.21it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.38it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.52it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.46it/s]
+[e8] applying per-tensor MX (FP4 / FP6, block=32, emulated gemm)
+[e8]   254 FP4 + 2 FP6 linears in 0.0s
+[e8]   peak GPU mem: 36.40 GB
+[e8] aux layers = [1, 15, 28]
+[e8] loading draft /sgl-workspace/SpecForge/outputs/sala_eagle3_v2/epoch_9_step_18750
+Set TORCH_CUDA_ARCH_LIST to 9.0
+[draft] missing keys: ['embed_tokens.weight']
+[draft] loaded embed_tokens from /sgl-workspace/SpecForge/models/MiniCPM-SALA
+[e8] prompt 0: mean_accept_len=0.109 over 64 positions
+[e8] prompt 1: mean_accept_len=0.031 over 64 positions
+[e8] prompt 2: mean_accept_len=0.094 over 64 positions
+[e8] prompt 3: mean_accept_len=0.094 over 64 positions
+[e8] prompt 4: mean_accept_len=0.141 over 64 positions
+[e8] prompt 5: mean_accept_len=0.094 over 64 positions
+[e8] prompt 6: mean_accept_len=0.062 over 64 positions
+[e8] prompt 7: mean_accept_len=0.062 over 64 positions
+[e8] prompt 8: mean_accept_len=0.062 over 64 positions
+[e8] prompt 9: mean_accept_len=0.156 over 64 positions
+[e8] OVERALL NVFP4-FourOverSix accept length = 0.091 (n_positions=640)
+[e8] NLL probe (n=10, max_len=512): mean_nll=2.7134 ppl=15.081
+[e8] agree prompt 0: match=61/64 first_div=61
+[e8] agree prompt 1: match=3/64 first_div=3
+[e8] agree prompt 2: match=3/64 first_div=3
+[e8] agree prompt 3: match=4/64 first_div=3
+[e8] agree prompt 4: match=3/64 first_div=3
+[e8] agree prompt 5: match=12/64 first_div=5
+[e8] agree prompt 6: match=10/64 first_div=10
+[e8] agree prompt 7: match=3/64 first_div=3
+[e8] agree prompt 8: match=4/64 first_div=4
+[e8] agree prompt 9: match=5/64 first_div=3
+[e8] AGREE bf16 vs NVFP4-FourOverSix = 108/640 = 0.169
+[e8] mean first divergence = 9.80 / 64
+[e8] wrote /sgl-workspace/soar_2026_w8_bench/results/e8_nvfp4_foursix.csv

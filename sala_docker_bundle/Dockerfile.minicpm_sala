@@ -1,0 +1,58 @@
+# ============================================================
+# Dockerfile for MiniCPM-SALA Inference Environment
+# Base: nvcr.io/nvidia/pytorch:25.01-py3
+#   - CUDA 12.8, Python 3.12, PyTorch (pre-installed)
+#   - Ubuntu 24.04
+# ============================================================
+
+FROM nvcr.io/nvidia/pytorch:25.01-py3
+
+LABEL maintainer="Jiayi Li <hyleepp@gmail.com>"
+LABEL description="MiniCPM-SALA inference environment based on SGLang"
+
+# Avoid interactive prompts during apt install
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Ensure CUDA is available for compilation
+ENV CUDA_HOME=/usr/local/cuda
+ENV PATH="${CUDA_HOME}/bin:${PATH}"
+ENV CUDACXX="${CUDA_HOME}/bin/nvcc"
+
+WORKDIR /workspace
+
+# ---- System Dependencies ----
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git \
+        build-essential \
+        ninja-build \
+    && rm -rf /var/lib/apt/lists/*
+
+# ---- Clone SGLang (minicpm_sala branch) ----
+RUN git clone -b minicpm_sala --recurse-submodules \
+        https://github.com/OpenBMB/sglang.git /workspace/sglang
+
+WORKDIR /workspace/sglang
+
+# ---- Install SGLang ----
+RUN pip install --no-cache-dir "cmake>=3.26" setuptools wheel \
+    && pip install --no-cache-dir -e "./python[all]"
+
+# ---- Clone & Build infllmv2_cuda_impl ----
+RUN git clone -b minicpm_sala \
+        https://github.com/OpenBMB/infllmv2_cuda_impl.git \
+        /workspace/sglang/3rdparty/infllmv2_cuda_impl \
+    && cd /workspace/sglang/3rdparty/infllmv2_cuda_impl \
+    && git submodule update --init --recursive \
+    && python setup.py install
+
+# ---- Build sparse_kernel (submodule, already cloned) ----
+RUN cd /workspace/sglang/3rdparty/sparse_kernel \
+    && python setup.py install
+
+# ---- Install Additional Libraries ----
+RUN pip install --no-cache-dir tilelang flash-linear-attention
+
+# ---- Default ----
+WORKDIR /workspace/sglang
+
+CMD ["/bin/bash"]

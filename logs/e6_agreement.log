@@ -1,0 +1,17 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[agree] loading bf16 target
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.23it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.37it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.44it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.46it/s]
+[agree] loading + FP8-quantizing target
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.22it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.36it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.43it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.51it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.45it/s]
+[agree] prompt 0: match=64/64 (1.00), first_div=64
+[agree] prompt 1: match=36/64 (0.56), first_div=36
+[agree] prompt 2: match=40/64 (0.62), first_div=40
+[agree] prompt 3: match=5/64 (0.08), first_div=5
+[agree] prompt 4: match=29/64 (0.45), first_div=29
+[agree] prompt 5: match=64/64 (1.00), first_div=64
+[agree] prompt 6: match=64/64 (1.00), first_div=64
+[agree] prompt 7: match=49/64 (0.77), first_div=49
+[agree] prompt 8: match=12/64 (0.19), first_div=10
+[agree] prompt 9: match=5/64 (0.08), first_div=5
+[agree] OVERALL match = 368/640 = 0.575
+[agree] mean first_divergence = 36.60 / 64

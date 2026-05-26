@@ -1,0 +1,22 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[e9-d3_mlp_fp8] loading + MLP-only fp8 quant
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.06it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.20it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.29it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.35it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.29it/s]
+[e9-d3_mlp_fp8]   quantized 96 MLP layers; peak 36.7 GB
+[e9-d3_mlp_fp8] aux layers = [1, 15, 28]
+[e9-d3_mlp_fp8] loading draft /sgl-workspace/SpecForge/outputs/sala_eagle3_v2/epoch_9_step_18750
+Set TORCH_CUDA_ARCH_LIST to 9.0
+[draft] missing keys: ['embed_tokens.weight']
+[draft] loaded embed_tokens from /sgl-workspace/SpecForge/models/MiniCPM-SALA
+[e9-d3_mlp_fp8] prompt 0: mean_accept_len=0.141 over 64 positions
+[e9-d3_mlp_fp8] prompt 1: mean_accept_len=0.188 over 64 positions
+[e9-d3_mlp_fp8] prompt 2: mean_accept_len=0.078 over 64 positions
+[e9-d3_mlp_fp8] prompt 3: mean_accept_len=0.062 over 64 positions
+[e9-d3_mlp_fp8] prompt 4: mean_accept_len=0.016 over 64 positions
+[e9-d3_mlp_fp8] prompt 5: mean_accept_len=0.094 over 64 positions
+[e9-d3_mlp_fp8] prompt 6: mean_accept_len=0.062 over 64 positions
+[e9-d3_mlp_fp8] prompt 7: mean_accept_len=0.078 over 64 positions
+[e9-d3_mlp_fp8] prompt 8: mean_accept_len=0.062 over 64 positions
+[e9-d3_mlp_fp8] prompt 9: mean_accept_len=0.141 over 64 positions
+[e9-d3_mlp_fp8] OVERALL accept length = 0.092 (n_positions=640)
+[e9-d3_mlp_fp8] NLL probe (n=10): nll=2.9075 ppl=18.311
+[e9-d3_mlp_fp8] wrote /sgl-workspace/soar_2026_w8_bench/results/e9_d3_mlp_fp8.csv

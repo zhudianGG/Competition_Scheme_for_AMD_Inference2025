@@ -1,0 +1,45 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[e6-fp8] loading target /sgl-workspace/SpecForge/models/MiniCPM-SALA
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.23it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.40it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.46it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.47it/s]
+[e6-fp8] quantizing target to FP8 W8A8 (torchao Float8DynamicActivationFloat8Weight, PerRow)
+[e6-fp8]   quantized 256 Linear layers in 0.2s
+[e6-fp8]   peak GPU mem: 36.62 GB
+[e6-fp8] aux layers = [1, 15, 28]
+[e6-fp8] loading draft /sgl-workspace/SpecForge/outputs/sala_eagle3_v2/epoch_9_step_18750
+Set TORCH_CUDA_ARCH_LIST to 9.0
+[draft] missing keys: ['embed_tokens.weight']
+[draft] loaded embed_tokens from /sgl-workspace/SpecForge/models/MiniCPM-SALA
+[e6-fp8] 50 prompts
+[e6-fp8] prompt 0: mean_accept_len=0.125 over 64 positions
+[e6-fp8] prompt 1: mean_accept_len=0.188 over 64 positions
+[e6-fp8] prompt 2: mean_accept_len=0.094 over 64 positions
+[e6-fp8] prompt 3: mean_accept_len=0.062 over 64 positions
+[e6-fp8] prompt 4: mean_accept_len=0.109 over 64 positions
+[e6-fp8] prompt 5: mean_accept_len=0.062 over 64 positions
+[e6-fp8] prompt 6: mean_accept_len=0.062 over 64 positions
+[e6-fp8] prompt 7: mean_accept_len=0.062 over 64 positions
+[e6-fp8] prompt 8: mean_accept_len=0.094 over 64 positions
+[e6-fp8] prompt 9: mean_accept_len=0.125 over 64 positions
+[e6-fp8] prompt 10: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 11: mean_accept_len=0.062 over 64 positions
+[e6-fp8] prompt 12: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 13: mean_accept_len=0.016 over 64 positions
+[e6-fp8] prompt 14: mean_accept_len=0.156 over 64 positions
+[e6-fp8] prompt 15: mean_accept_len=0.062 over 64 positions
+[e6-fp8] prompt 16: mean_accept_len=0.047 over 64 positions
+[e6-fp8] prompt 17: mean_accept_len=0.172 over 64 positions
+[e6-fp8] prompt 18: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 19: mean_accept_len=0.172 over 64 positions
+[e6-fp8] prompt 20: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 21: mean_accept_len=0.031 over 64 positions
+[e6-fp8] prompt 22: mean_accept_len=0.109 over 64 positions
+[e6-fp8] prompt 23: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 24: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 25: mean_accept_len=0.125 over 64 positions
+[e6-fp8] prompt 26: mean_accept_len=0.078 over 64 positions
+[e6-fp8] prompt 27: mean_accept_len=0.047 over 64 positions
+[e6-fp8] prompt 28: mean_accept_len=0.109 over 64 positions
+[e6-fp8] prompt 29: mean_accept_len=0.062 over 64 positions
+[e6-fp8] OVERALL FP8 accept length = 0.090 (n_positions=1920)
+[e6-fp8] NLL probe (n=20, max_len=512): mean_nll=2.7066 ppl=14.978
+[e6-fp8] wrote /sgl-workspace/soar_2026_w8_bench/results/e6_fp8_quality.csv

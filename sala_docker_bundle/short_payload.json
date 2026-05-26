@@ -1,0 +1,4 @@
+{
+  "text": "Hello, my name is",
+  "sampling_params": {"max_new_tokens": 32, "temperature": 0.9}
+}

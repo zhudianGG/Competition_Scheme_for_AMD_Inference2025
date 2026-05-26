@@ -1,0 +1,40 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+[e7-mxfp4] 10 prompts loaded
+[e7-mxfp4] loading bf16 target for agreement anchor
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.23it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.40it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.46it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.48it/s]
+[e7-mxfp4] bf16 rollouts captured (10 prompts)
+[e7-mxfp4] loading target /sgl-workspace/SpecForge/models/MiniCPM-SALA
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.23it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.39it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.45it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.53it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.47it/s]
+[e7-mxfp4] swapping Linear → MX (fp4_e2m1, block=32, emulated gemm)
+[e7-mxfp4]   swapped 256 Linear layers in 0.0s
+[e7-mxfp4]   peak GPU mem: 36.34 GB
+[e7-mxfp4] aux layers = [1, 15, 28]
+[e7-mxfp4] loading draft /sgl-workspace/SpecForge/outputs/sala_eagle3_v2/epoch_9_step_18750
+Set TORCH_CUDA_ARCH_LIST to 9.0
+[draft] missing keys: ['embed_tokens.weight']
+[draft] loaded embed_tokens from /sgl-workspace/SpecForge/models/MiniCPM-SALA
+[e7-mxfp4] prompt 0: mean_accept_len=0.109 over 64 positions
+[e7-mxfp4] prompt 1: mean_accept_len=0.094 over 64 positions
+[e7-mxfp4] prompt 2: mean_accept_len=0.109 over 64 positions
+[e7-mxfp4] prompt 3: mean_accept_len=0.141 over 64 positions
+[e7-mxfp4] prompt 4: mean_accept_len=0.016 over 64 positions
+[e7-mxfp4] prompt 5: mean_accept_len=0.094 over 64 positions
+[e7-mxfp4] prompt 6: mean_accept_len=0.062 over 64 positions
+[e7-mxfp4] prompt 7: mean_accept_len=0.078 over 64 positions
+[e7-mxfp4] prompt 8: mean_accept_len=0.078 over 64 positions
+[e7-mxfp4] prompt 9: mean_accept_len=0.203 over 64 positions
+[e7-mxfp4] OVERALL MXFP4 accept length = 0.098 (n_positions=640)
+[e7-mxfp4] NLL probe (n=10, max_len=512): mean_nll=2.7302 ppl=15.336
+[e7-mxfp4] agree prompt 0: match=60/64 first_div=59
+[e7-mxfp4] agree prompt 1: match=7/64 first_div=6
+[e7-mxfp4] agree prompt 2: match=3/64 first_div=3
+[e7-mxfp4] agree prompt 3: match=3/64 first_div=3
+[e7-mxfp4] agree prompt 4: match=14/64 first_div=3
+[e7-mxfp4] agree prompt 5: match=12/64 first_div=5
+[e7-mxfp4] agree prompt 6: match=11/64 first_div=11
+[e7-mxfp4] agree prompt 7: match=3/64 first_div=3
+[e7-mxfp4] agree prompt 8: match=5/64 first_div=4
+[e7-mxfp4] agree prompt 9: match=5/64 first_div=3
+[e7-mxfp4] AGREE bf16 vs MXFP4 = 123/640 = 0.192
+[e7-mxfp4] mean first divergence = 10.00 / 64
+[e7-mxfp4] wrote /sgl-workspace/soar_2026_w8_bench/results/e7_mxfp4_quality.csv

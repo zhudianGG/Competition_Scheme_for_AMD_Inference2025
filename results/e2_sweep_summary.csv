@@ -1,0 +1,6 @@
+checkpoint,k,mean_accept_per_round,n_rounds
+epoch_5_step_10000,4,0.5799,407
+epoch_9_step_18750,4,0.6387,393
+epoch_0_step_1875,4,0.4400,450
+epoch_2_step_5000,4,0.5607,412
+epoch_7_step_15000,4,0.6206,398

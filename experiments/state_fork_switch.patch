@@ -1,0 +1,23 @@
+# Suggested ~10-line addition to enable E5's SD_HC_NO_GLA_FORK switch.
+# Apply to: /sgl-workspace/sglang/python/sglang/srt/layers/attention/hybrid_linear_attn_backend.py
+#
+# The change short-circuits the sibling-aware tree-verify path by treating
+# every draft token as if it were the first of a fresh branch (no intermediate
+# state cache reuse). Result is functionally wrong under tree verify — that's
+# the point: it lets E5 demonstrate the regression the state-fork prevents.
+#
+# Locate the `forward_extend` method (~line 888) and wrap the `is_target_verify`
+# branch:
+#
+#     import os
+#     ...
+#     is_target_verify = forward_batch.forward_mode.is_target_verify()
+# +   if is_target_verify and os.environ.get("SD_HC_NO_GLA_FORK") == "1":
+# +       # Degraded path: pretend we're in plain extend, no sibling fork.
+# +       is_target_verify = False
+#
+# Repeat the same guard at the second is_target_verify check inside the
+# Linear Attention output projection (~line 990) if your sglang version has
+# divergent post-update code paths.
+#
+# After patching, restart the server and re-run e5_gla_state_fork_check.py.
