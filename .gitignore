@@ -8,6 +8,8 @@ __pycache__/
 
 # Bench artifacts (transient / re-derivable)
 *.tar.gz
+# but ship the submission tarballs
+!soar_submission_*.tar.gz
 *.tmp
 .ipynb_checkpoints/
 
